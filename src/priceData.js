@@ -70,3 +70,5 @@ const data = [
         photoURL: "https://images-na.ssl-images-amazon.com/images/I/91n1UCGwJOL._SL1500_.jpg"
     }
 ];
+
+export {data};

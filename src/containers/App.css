@@ -5,5 +5,15 @@
 }
 
 #page {
-  flex: 1;
+  margin: auto;
+}
+
+
+.userInput {
+  margin: auto;
+  display: flex;
+}
+
+.field {
+  margin: 5px;
 }
