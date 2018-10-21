@@ -13,6 +13,17 @@ import 'react-html5-camera-photo/build/css/index.css';
 import $ from "jquery";
 
 class App extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      categories: [],
+      color: {},
+      description: {},
+      metadata: {},
+      requestId: ''
+    }
+    this.makeblob = this.makeblob.bind(this)
+  }
   makeblob(dataURL) {
     var BASE64_MARKER = ';base64,';
     if (dataURL.indexOf(BASE64_MARKER) == -1) {
@@ -83,10 +94,12 @@ class App extends Component {
         contentType: 'application/octet-stream',
         data: this.makeblob(imageUrl)
       })
-      .done(function (data) {
+      .done((data) => {
+        const { categories, color, description, metadata, requestId } = data
         console.log(data);
+        this.setState({ categories, color, description, metadata, requestId })
       })
-      .fail(function (error) {
+      .fail((error) => {
         console.log(error);
       });
     
@@ -112,6 +125,7 @@ class App extends Component {
           <Camera
             onTakePhoto = { (dataUri) => { this.onTakePhoto(dataUri); } }
           />
+          <span>{JSON.stringify(this.state)}</span>
         </article>
         <Footer />
       </React.Fragment>
