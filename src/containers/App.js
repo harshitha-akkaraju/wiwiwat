@@ -28,8 +28,7 @@ class App extends Component {
   }
 
   render() {
-    let result = this.state.data.length > 0 ? this.getRandomInt(this.state.data.length) : null;
-
+    let result = this.state.data.length > 0 ? this.state.data[this.getRandomInt(this.state.data.length)] : null;
     return (
       <React.Fragment>
         <Header />
@@ -40,7 +39,7 @@ class App extends Component {
           {result && 
             <div>
               <h3 style={{ textAlign: 'center' }}>Here's what we found!</h3>
-              <Result itemName={result.itemName} weight={result.weight} unit={result.unit} distFromWholeNum={result.distFromWholeNum} imgURL={result.imgURL} />
+              <Result itemName={result.itemName} weight={result.weight} units={result.units} distFromWholeNum={result.distFromWholeNum} imgURL={result.photoURL} />
             </div>
           }
           

@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import {TextField} from '@material-ui/core';
+import { getClosestItem } from '../productFinder';
 import { NativeSelect, MenuItem, ListItemText } from '@material-ui/core';
 
 class SearchForm extends React.Component {
@@ -12,20 +13,24 @@ class SearchForm extends React.Component {
 
   handleChange(name) {
     return event => {
-      this.setState({ [name]: event.target.value });
+      this.setState({ [name]: event.target.value }, () => {
+        if (this.state.weight && this.state.cost && this.state.units) {
+          let data = getClosestItem(this.state.cost, this.state.units, this.state.weight);
+          this.props.updateAppState(data);
+        }
+      });
     };
   }
 
   render() {
-    console.log(getClosestItem(.29, "lb", 2.3));
     return (
       <form className="userInput">
         <TextField id="object" label="OBJECT" type="text" className={"field"}
           variant="outlined" onChange={this.handleChange("object-name")}/>
         <TextField id="value" label="COST" type="number" className={"field"}
           variant="outlined" onChange={this.handleChange("cost")}/>
-        <TextField id="weight" label="Quanity" type="number" defaultValue={1} className={"field"} variant="outlined" onChange={this.handleChange("weight")}/>
-        <TextField id="quantity" label="Weight (1 unit)" type="number" defaultValue={1} className={"field"} variant="outlined" onChange={this.handleChange("quantity")}/>
+        {/* <TextField id="weight" label="Quantity" type="number" defaultValue={1} className={"field"} variant="outlined" onChange={this.handleChange("weight")}/> */}
+        <TextField id="quantity" label="Weight (1 unit)" type="number" defaultValue={1} className={"field"} variant="outlined" onChange={this.handleChange("weight")}/>
         <NativeSelect onChange={this.handleChange("units")}>
           <option>UNITS</option>
           <option>lbs</option>

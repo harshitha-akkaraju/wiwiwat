@@ -25,9 +25,9 @@ class Result extends Component {
                         </CardContent>
                         <CardContent>
                             <p>{this.props.itemName}</p>
-                            <p>{"Quantity: " + this.props.itemName}</p>
-                            <p>{"Units: " + this.props.itemName}</p>
-                            <p>{"Distance from the closest whole number: " + this.props.itemName}</p>
+                            <p>{"Weight: " + this.props.weight}</p>
+                            <p>{"Units: " + this.props.units}</p>
+                            <p>{"Distance from the closest whole number: " + this.props.distFromWholeNum}</p>
                         </CardContent>
                     </CardActionArea>
                 </Card>
