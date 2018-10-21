@@ -29,11 +29,13 @@ function getClosestItem(inputItemValue, inputItemUnit, inputItemWeight) {
     
     for (var i = 0; i < jsonFile.length; i++) {
         if (jsonFile[i].unit == "each") {
+            // If approximately a number of items with quantity "each"
             if (inputItemValue % jsonFile[i].price < .2) {
-                quantities.push({itemName: jsonFile[i].item, 
+                quantities.push({
+                    itemName: jsonFile[i].item, 
                     quantity: jsonFile[i].quantity, 
-                    unit: jsonFile[i].units});
-                }
+                    unit: jsonFile[i].units
+                }); }
             } else {
                 
             }
