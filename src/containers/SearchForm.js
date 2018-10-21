@@ -17,6 +17,7 @@ class SearchForm extends React.Component {
   }
 
   render() {
+    console.log(getClosestItem(.29, "lb", 2.3));
     return (
       <form className="userInput">
         <TextField id="object" label="OBJECT" type="text" className={"field"}

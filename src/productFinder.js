@@ -1,7 +1,10 @@
+// Source in data
+import { data } from './priceData';
+
 // getClosestItem takes in a value of an item and the unit the item is in, and outputs
 // an item and quantity of that item that approximates the value of the input item.
-function getClosestItem(inputItemValue, inputItemUnit, inputItemWeight) {
-    if (inputItemValue == 0 || inputItemWeight == 0) { return ""; }
+export function getClosestItem(inputItemValue, inputItemUnit, inputItemWeight) {
+    if (inputItemValue === 0 || inputItemWeight === 0) { return ""; }
     
     // Convert weight to lbs for us metric avoidant Americans
     let perPoundValue = 0;
@@ -15,33 +18,25 @@ function getClosestItem(inputItemValue, inputItemUnit, inputItemWeight) {
     } else if (inputItemUnit === "kg") {
         perPoundValue = inputItemValue * 2.20462;
         itemWeightInPounds = inputItemValue * 2.20462;
-    } else if (inputItemUnit == "lb") {
+    } else if (inputItemUnit === "lb") {
         perPoundValue = inputItemValue;
     }
     
-    let output = {
-        itemName: "",
-        quantity: 0,
-        unit: ""
-    };
-    
     let quantities = [];
+    data.forEach(prod => {
+        // Find amount of this item that the input item is equivalent in value to
+        quantities.push({
+            itemName: prod.itemName,
+            quantity: inputItemWeight / prod.price,
+            units: "lb",
+            distFromWholeNum: (inputItemWeight % prod.price) - 1,
+            photoURL: prod.photoURL
+        })
+    });  
+    // Sort by quantity, return
+    quantities.sort(function(o1, o2) {
+        return o1.distFromWholeNum - o2.distFromWholeNum;
+    })
     
-    for (var i = 0; i < jsonFile.length; i++) {
-        if (jsonFile[i].unit == "each") {
-            if (inputItemValue % jsonFile[i].price < .2) {
-                quantities.push({itemName: jsonFile[i].item, 
-                    quantity: jsonFile[i].quantity, 
-                    unit: jsonFile[i].units});
-                }
-            } else {
-                
-            }
-        }
-        
-        
-    }
-    
-    function weightValToPound(value, weight, unit) {
-        s
-    }
+    return quantities;
+}
