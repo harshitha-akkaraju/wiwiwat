@@ -61,6 +61,13 @@ export const data = [
         unit: "lb",
         category: "consumer goods",
         photoURL: "https://images-na.ssl-images-amazon.com/images/I/61pCWfoLuKL._SY450_.jpg"
+    },
+    {
+        itemName: "Banana",
+        price: 0.56,
+        unit: "lb",
+        category: "food",
+        photoURL: "https://i5.walmartimages.ca/images/Large/580/6_r/875806_R.jpg"
     }
     // {
     //     itemName: "GloBowl Motion-Activated Toilet Nightlight",
