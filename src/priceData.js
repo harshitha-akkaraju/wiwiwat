@@ -68,21 +68,34 @@ export const data = [
         unit: "lb",
         category: "food",
         photoURL: "https://i5.walmartimages.ca/images/Large/580/6_r/875806_R.jpg"
-    }
-    // {
-    //     itemName: "GloBowl Motion-Activated Toilet Nightlight",
-    //     price: 9.69,
-    //     unit: "each",
-    //     category: "goof",
-    //     photoURL: "https://images-na.ssl-images-amazon.com/images/I/71tfbRyjMIL._SL1500_.jpg"
-    // },
-    // {
-    //     itemName: "Foam Pool Noodles",
-    //     price: 1.5,
-    //     unit: "each",
-    //     category: "goof",
-    //     photoURL: "https://images-na.ssl-images-amazon.com/images/I/614-xrcjPJL._SX522_.jpg"
-    // },
+    },
+    {
+        itemName: "GloBowl Motion-Activated Toilet Nightlight",
+        price: 8,
+        unit: "lb",
+        category: "goof",
+        photoURL: "https://images-na.ssl-images-amazon.com/images/I/71tfbRyjMIL._SL1500_.jpg"
+    },
+    {
+        itemName: "Foam Pool Noodles",
+        price: 0.76,
+        unit: "lb",
+        photoURL: "https://images-na.ssl-images-amazon.com/images/I/614-xrcjPJL._SX522_.jpg"
+    },
+    {
+        itemName: "Salmon Fish Sushi Pillow Cushion Home Decor",
+        price: 16.46,
+        unit: "lb",
+        category: "goof",
+        photoURL: "https://images-na.ssl-images-amazon.com/images/I/416CKdw6LjL.jpg"
+    },
+    {
+        itemName: "ToePal Gel Separators",
+        price: 17.85,
+        unit: "lb",
+        category: "goof",
+        photoURL: "https://images-na.ssl-images-amazon.com/images/I/91n1UCGwJOL._SL1500_.jpg"
+    }]
     // {
     //     itemName: "Potatoes",
     //     price: 0.5,
@@ -91,24 +104,10 @@ export const data = [
     //     photoURL: "https://images-na.ssl-images-amazon.com/images/I/811fGdwqf%2BL._SL1500_.jpg"
     // },
     // {
-    //     itemName: "Salmon Fish Sushi Pillow Cushion Home Decor",
-    //     price: 7.09,
-    //     unit: "each",
-    //     category: "goof",
-    //     photoURL: "https://images-na.ssl-images-amazon.com/images/I/416CKdw6LjL.jpg"
-    // },
-    // {
     //     itemName: "Gummi Bear Skeleton Anatomy Model Kit",
     //     price: 36.78,
     //     unit: "each",
     //     category: "goof",
     //     photoURL: "https://images-na.ssl-images-amazon.com/images/I/71-7hxETLkL._SL1500_.jpg"
     // },
-    // {
-    //     itemName: "ToePal Gel Separators",
-    //     price: 17.85,
-    //     unit: "each",
-    //     category: "goof",
-    //     photoURL: "https://images-na.ssl-images-amazon.com/images/I/91n1UCGwJOL._SL1500_.jpg"
-    // }
-];
+// ];
