@@ -32,6 +32,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Header />
+        {<center><h1>W.I.W.I. <i>WAT?!</i></h1></center>}
         <article id='page'>
           <SearchForm updateAppState={this.updateAppState}/>
           <br/>
