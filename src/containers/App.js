@@ -9,7 +9,8 @@ import SearchForm from './SearchForm'
 import Camera from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 
-import request from 'request';
+// import request from 'request';
+import $ from "jquery";
 
 class App extends Component {
   makeblob(dataURL) {
@@ -71,7 +72,25 @@ class App extends Component {
           'Ocp-Apim-Subscription-Key' : subscriptionKey
         }
     };
+
+    $.ajax({
+        url: uriBase + "?" + $.param(params),
+        type: 'POST',
+        processData: false,
+        headers: {
+          'Ocp-Apim-Subscription-Key': subscriptionKey
+        },
+        contentType: 'application/octet-stream',
+        data: this.makeblob(imageUrl)
+      })
+      .done(function (data) {
+        console.log(data);
+      })
+      .fail(function (error) {
+        console.log(error);
+      });
     
+    /*
     request.post(options, (error, response, body) => {
       if (error) {
         console.log('Error: ', error);
@@ -81,6 +100,7 @@ class App extends Component {
       console.log('JSON Response\n');
       console.log(jsonResponse);
     });
+    */
   }
 
   render() {
