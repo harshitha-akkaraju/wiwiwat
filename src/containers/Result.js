@@ -21,13 +21,11 @@ class Result extends Component {
                 <Card>
                     <CardActionArea>
                         <CardContent style={{textAlign: "center"}}>
-                            <img src={this.props.imgURL}></img>
+                            <img src={this.props.imgURL} style={{width: 300, height:300}}></img>
                         </CardContent>
                         <CardContent>
                             <p>{this.props.itemName}</p>
-                            <p>{"Weight: " + this.props.weight}</p>
-                            <p>{"Units: " + this.props.units}</p>
-                            <p>{"Distance from the closest whole number: " + this.props.distFromWholeNum}</p>
+                            <p>{"This item is approximately worth its weight in: " + this.props.itemName}</p>
                         </CardContent>
                     </CardActionArea>
                 </Card>

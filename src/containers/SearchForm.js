@@ -30,7 +30,7 @@ class SearchForm extends React.Component {
         <TextField id="value" label="COST" type="number" className={"field"}
           variant="outlined" onChange={this.handleChange("cost")}/>
         {/* <TextField id="weight" label="Quantity" type="number" defaultValue={1} className={"field"} variant="outlined" onChange={this.handleChange("weight")}/> */}
-        <TextField id="quantity" label="Weight (1 unit)" type="number" defaultValue={1} className={"field"} variant="outlined" onChange={this.handleChange("weight")}/>
+        <TextField id="quantity" label="Weight (1 unit)" type="number" defaultValue={0} className={"field"} variant="outlined" onChange={this.handleChange("weight")}/>
         <NativeSelect onChange={this.handleChange("units")}>
           <option>UNITS</option>
           <option>lbs</option>

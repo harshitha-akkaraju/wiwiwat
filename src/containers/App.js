@@ -28,7 +28,7 @@ class App extends Component {
   }
 
   render() {
-    let result = this.state.data.length > 0 ? this.state.data[this.getRandomInt(this.state.data.length)] : null;
+    let result = this.state.data[0];
     return (
       <React.Fragment>
         <Header />

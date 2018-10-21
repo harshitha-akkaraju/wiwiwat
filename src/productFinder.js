@@ -18,13 +18,13 @@ export function getClosestItem(inputItemValue, inputItemUnit, inputItemWeight) {
     
     let quantities = [];
     data.forEach(prod => {
-        let weight = inputItemValue / prod.price;
+        let valPerPound = inputItemValue / itemWeightInPounds;
 
         quantities.push({
             itemName: prod.itemName,
-            weight: weight,
+            weight: prod.price,
             units: "lb",
-            distFromWholeNum: itemWeightInPounds - weight,
+            distFromWholeNum: Math.abs(prod.price - valPerPound),
             photoURL: prod.photoURL
         })
     });  
